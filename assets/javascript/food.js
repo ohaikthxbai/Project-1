@@ -1,5 +1,7 @@
-		//apiKey = "AIzaSyAUs0khjZaZTIMq4E-Rg8lSRdQmRJG4Rk0"
-		var restaurant;
-		var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670,151.1957&radius=500&types=food&name=cruise&key=AIzaSyAOSfPi3Xt2_2Uxr7sH6QOXDe6DXXGIx20" + restaurant + "AIzaSyAOSfPi3Xt2_2Uxr7sH6QOXDe6DXXGIx20";
+		//BARZZ api page = https://www.programmableweb.com/api/barzz
+		//BARZZ documentation = https://barzz.3scale.net/docs
+		var bar;
+		var queryURL = "http://echo-api.3scale.net/?user_key=dbd687c7ace8bf9a4dce0971129d8320" + bar;
+		alert("hello");
 
 
