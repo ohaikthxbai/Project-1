@@ -16,7 +16,8 @@ var config = {
   var database = firebase.database();
 
 
-function showMovies() {
+$("#selectMovies").on("click", function(event) {
+
 $.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
   .done(function(data) {
 
@@ -43,6 +44,4 @@ $.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&zip=
   }
 
 );
-}
-
-showMovies();
+});
