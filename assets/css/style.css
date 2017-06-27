@@ -1,0 +1,43 @@
+.top {
+      text-align: center;
+}
+
+.center {
+      display: block;
+      margin: auto;
+}
+
+.logo {
+      width: 100px;
+      height: 100px;
+      align-content: center;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid #000000;
+    text-align: center;
+}
+
+.btn-close-modal {
+          cursor:pointer;
+          color:#fff;
+          display: block;
+          margin: auto;
+      }
+
+.image {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 120px;
+          height: 120px;
+          margin:-60px 0 0 -60px;
+          -webkit-animation:spin 4s linear infinite;
+          -moz-animation:spin 4s linear infinite;
+          animation:spin 4s linear infinite;
+      }
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
