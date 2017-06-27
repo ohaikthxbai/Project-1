@@ -1,7 +1,15 @@
+var d = new Date();
+var month = d.getMonth()+1;
+var day = d.getDate();
+
+var startDate = d.getFullYear() + '-' +
+    ((''+month).length<2 ? '0' : '') + month + '-' +
+    ((''+day).length<2 ? '0' : '') + day;
+
 var data;
 var zipCode = 60601;
-var startDate = '2017-06-26';
 var movies = [];
+var endDate = '2017-07-15';
 
 var config = {
     apiKey: "AIzaSyAwU4ovw7pk-yAktrPJXl7CV18eFPgiMTI",
@@ -18,8 +26,11 @@ var config = {
 
 $("#selectMovies").on("click", function(event) {
 
-$.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
+$.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&endDate='+endDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
   .done(function(data) {
+
+    $('#selectMovies').hide();
+    $('#box').hide();
 
     for (var i = 1; i < data.length; i++) {
 
@@ -31,7 +42,7 @@ $.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&zip=
      }
      var theater = theaterArray.join(", ");
 
-    $("#moviePoster").append('<a id="demo0'+i+'" href="#modal-0'+i+'"><img src="'+imageURL+'"></a><div id="modal-0'+i+'"><div id="btn-close-modal-'+i+'" class="close-modal-0'+i+'"><img class="closebt" src="closebt.svg" /></div><div class="modal-content"></div>'+theater+'</div>');
+    $("#moviePoster").append('<a id="demo0'+i+'" href="#modal-0'+i+'"><img src="'+imageURL+'"></a><div id="modal-0'+i+'"><div id="btn-close-modal-'+i+'" class="close-modal-0'+i+'"><img class="closebt" src="./assets/images/closebt.svg" /></div><div class="modal-content"></div>'+theater+'</div>');
 
       $("#demo0"+i).animatedModal({
           modalTarget:'modal-0'+i,

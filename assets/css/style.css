@@ -1,3 +1,17 @@
+.top {
+      text-align: center;
+}
+
+.center {
+      display: block;
+      margin: auto;
+}
+
+.logo {
+      width: 100px;
+      height: 100px;
+      align-content: center;
+}
 .btn-close-modal {
           cursor:pointer;
           color:#fff;
