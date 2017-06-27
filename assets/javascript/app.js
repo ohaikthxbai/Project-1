@@ -3,50 +3,46 @@ var zipCode = 60601;
 var startDate = '2017-06-26';
 var movies = [];
 
-//https://api.themoviedb.org/3/movie/550?api_key=2dbb3a151688e9f94a9dad27df9a71d8
+var config = {
+    apiKey: "AIzaSyAwU4ovw7pk-yAktrPJXl7CV18eFPgiMTI",
+    authDomain: "food-date-7e9ed.firebaseapp.com",
+    databaseURL: "https://food-date-7e9ed.firebaseio.com",
+    projectId: "food-date-7e9ed",
+    storageBucket: "food-date-7e9ed.appspot.com",
+    messagingSenderId: "777352006484"
+  };
 
-//https://api.themoviedb.org/3/discover/movie
-//?api_key=2dbb3a151688e9f94a9dad27df9a71d8&primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22
+  firebase.initializeApp(config);
+  var database = firebase.database();
 
 
 function showMovies() {
 $.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
   .done(function(data) {
 
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 1; i < data.length; i++) {
 
-      var img = document.createElement("img");
-      img.src = 'https://dlby.tmsimg.com/'+data[i].preferredImage.uri;
-      img.id = 'demo0'+i;
-      $('img').attr('href','#modal-02');
+    var imageURL = 'https://dlby.tmsimg.com/'+data[i].preferredImage.uri;
+    var theaterArray = [];
 
-      var src = $('#moviePoster');
+     for (var j = 0; j < data[i].showtimes.length; j++) {
+       theaterArray[j] = theaterArray.push(data[i].showtimes[j].ticketURI);
+     }
+     var theater = theaterArray.join(", ");
 
-      $('#moviePoster').append(img);
+    $("#moviePoster").append('<a id="demo0'+i+'" href="#modal-0'+i+'"><img src="'+imageURL+'"></a><div id="modal-0'+i+'"><div id="btn-close-modal-'+i+'" class="close-modal-0'+i+'"><img class="closebt" src="closebt.svg" /></div><div class="modal-content"></div>'+theater+'</div>');
 
       $("#demo0"+i).animatedModal({
-          modalTarget:'modal-02',
+          modalTarget:'modal-0'+i,
           animatedIn:'lightSpeedIn',
           animatedOut:'bounceOutDown',
           color:'#3498db'
       });
+    }
 
-      }
+  }
 
-  });
-
+);
 }
 
 showMovies();
-
-
-
-
-
-
-
-
-//http://data.tmsapi.com/v1.1/movies/showings?api_key=vxy946ekttqwzeneue3rhdeg&startDate=2017-06-24&zip=60601
-//http://data.tmsapi.com/v1.1/movies/showings?api_key=vxy946ekttqwzeneue3rhdeg&startDate=2017-06-24&zip=60601&tmsId=MV000756790000
-//http://data.tmsapi.com/v1.1/movies/showings?startDate=2017-06-24&zip=60611&api_key=vxy946ekttqwzeneue3rhdeg
-//https://dlby.tmsimg.com/assets/p11714883_v_v5_aa.jpg
