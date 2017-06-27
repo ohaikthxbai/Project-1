@@ -1,15 +1,26 @@
+//Use Srict in conjuction with JQuery
+( function ( $ ) {
+    'use strict';
+    $( document ).ready( function () {
+        console.log( 'working!' );
+    });
+} ( jQuery ) );
+
+//Function to Calculate today's date
 var d = new Date();
 var month = d.getMonth()+1;
 var day = d.getDate();
-
 var startDate = d.getFullYear() + '-' +
     ((''+month).length<2 ? '0' : '') + month + '-' +
     ((''+day).length<2 ? '0' : '') + day;
 
+//Set Global Variables
 var data;
 var movies = [];
 var endDate = '2017-07-15';
+var firebase;
 
+//Set Firebase connection
 var config = {
     apiKey: "AIzaSyAwU4ovw7pk-yAktrPJXl7CV18eFPgiMTI",
     authDomain: "food-date-7e9ed.firebaseapp.com",
@@ -22,14 +33,16 @@ var config = {
   firebase.initializeApp(config);
   var database = firebase.database();
 
-
+//Set functionality for on click Select Movies button
 $("#selectMovies").on("click", function(event) {
 
+//Assign the zipcode typed to a local variable
   var zipCode = $("#zipcode").val().trim();
 
-$.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&endDate='+endDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
+$.ajax('https://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&endDate='+endDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
   .done(function(data) {
 
+//Hide the input box and button
     $('#selectMovies').hide();
     $('#zipcode').hide();
 
