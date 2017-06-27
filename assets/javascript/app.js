@@ -7,7 +7,6 @@ var startDate = d.getFullYear() + '-' +
     ((''+day).length<2 ? '0' : '') + day;
 
 var data;
-var zipCode = 60601;
 var movies = [];
 var endDate = '2017-07-15';
 
@@ -26,11 +25,13 @@ var config = {
 
 $("#selectMovies").on("click", function(event) {
 
+  var zipCode = $("#zipcode").val().trim();
+
 $.ajax('http://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&endDate='+endDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
   .done(function(data) {
 
     $('#selectMovies').hide();
-    $('#box').hide();
+    $('#zipcode').hide();
 
     for (var i = 1; i < data.length; i++) {
 

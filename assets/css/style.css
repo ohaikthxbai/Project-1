@@ -12,6 +12,14 @@
       height: 100px;
       align-content: center;
 }
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid #000000;
+    text-align: center;
+}
+
 .btn-close-modal {
           cursor:pointer;
           color:#fff;
