@@ -35,11 +35,12 @@ var config = {
 
 //Set functionality for on click Select Movies button
 $("#selectMovies").on("click", function(event) {
-
+  $('h1').animate({'right':'200px'},1000);
 //Assign the zipcode typed to a local variable
   var zipCode = $("#zipcode").val().trim();
+  var apikey = 'y2u5f77zh23pt34ukav7utg4';
 
-$.ajax('https://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&endDate='+endDate+'&zip='+zipCode+'&api_key=vxy946ekttqwzeneue3rhdeg')
+$.ajax('https://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&endDate='+endDate+'&zip='+zipCode+'&api_key='+apikey)
   .done(function(data) {
 
 //Hide the input box and button
@@ -49,14 +50,16 @@ $.ajax('https://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&end
     for (var i = 1; i < data.length; i++) {
 
     var imageURL = 'https://dlby.tmsimg.com/'+data[i].preferredImage.uri;
-    var theaterArray = [];
+
+
+     var title = '<h1>'+data[i].title+'</h1>';
+     var showTimes = [];
 
      for (var j = 0; j < data[i].showtimes.length; j++) {
-       theaterArray[j] = theaterArray.push(data[i].showtimes[j].ticketURI);
-     }
-     var theater = theaterArray.join(", ");
+       showTimes.push('<h4>'+data[i].showtimes[j].dateTime+'</h4>');
+      }
 
-    $("#moviePoster").append('<a id="demo0'+i+'" href="#modal-0'+i+'"><img src="'+imageURL+'"></a><div id="modal-0'+i+'"><div id="btn-close-modal-'+i+'" class="close-modal-0'+i+'"><img class="closebt" src="./assets/images/closebt.svg" /></div><div class="modal-content"></div>'+theater+'</div>');
+    $("#moviePoster").append('<a id="demo0'+i+'" href="#modal-0'+i+'"><img src="'+imageURL+'"></a><div id="modal-0'+i+'"><div id="btn-close-modal-'+i+'" class="close-modal-0'+i+'"><img class="closebt" src="./assets/images/closebt.svg" /></div><div class="modal-content"></div>'+title+showTimes+'</div>');
 
       $("#demo0"+i).animatedModal({
           modalTarget:'modal-0'+i,
@@ -69,4 +72,14 @@ $.ajax('https://data.tmsapi.com/v1.1/movies/showings?startDate='+startDate+'&end
   }
 
 );
+});
+
+//Function to on.click when user hits enter
+$('#zipcode').keypress(function (e) {
+var key = e.which;
+if(key == 13)  // the enter key code
+ {
+   $('input[name = butAssignProd]').click();
+   return false;
+ }
 });
