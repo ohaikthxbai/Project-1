@@ -1,41 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- mobile responsiveness! -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-    <!-- Latest compiled and minified CSS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DinnerView</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- linkt to style sheet -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="C:\Users\Daniel's PC\Desktop\Project-1\assets\javascript\food.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-database.js"></script>
+ 	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 </head>
-<style>
-.col-lg-4 {
-    text-align: center;
-    margin-top: 200px;
-    padding: 100px;
-    border: solid 1px #000000;
-}
-</style>
 
-<body>
-    <div class="top-left">
-        <input id="zip-code" type="text" placeholder="Input zip code here">
-        <input id="go" type="submit">
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div id="movie-data" class="col-lg-4">movie</div>
-            <div id="food-data" class="col-lg-4">food</div>
-            <div id="plan-data" class="col-lg-4">plan</div>
-        </div>
-    </div>
+<body>    
+		<h1>DinnerView</h1>
+		<br> 
+		<button id="btn">FOOD</button>
+		<div id="food"></div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="C:\Users\Daniel's PC\Desktop\Project-1\assets\javascript\food.js"></script>
 </body>
 </html>
