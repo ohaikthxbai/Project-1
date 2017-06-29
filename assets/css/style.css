@@ -13,6 +13,10 @@
       align-content: center;
 }
 
+a {
+    color: hotpink;
+    text-decoration: underline;
+}
 
 /*header.logo {
   width: 100%;
