@@ -51,6 +51,7 @@ $("#selectMovies").on("click", function(event) {
         //Hide the input box and button
         $('#selectMovies').hide();
         $('#zipcode').hide();
+        $('#description').hide();
 
         for (var i = 1; i < data.length; i++) {
 
@@ -103,7 +104,7 @@ $("#selectMovies").on("click", function(event) {
             modalTarget: 'modal-0' + i,
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#3498db'
+            color: '#E1E1E1'
           });
         }
 

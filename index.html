@@ -21,19 +21,24 @@
 </head>
 
 <body>
-    <h1 class="top"><a href="index.html"><img class="logo" id="logo" src="./assets/images/logo.png" /></a>DinnerView</h1>
+    <div class="header">
+        <h1 class="top"><a href="index.html"><img class="logo" id="logo" src="./assets/images/logo.png" /></a>DinnerView</h1>
+    </div>
     <div class="container-fluid">
-        <div class="row">
-            <input id="zipcode" class="center" type="text" placeholder="Enter ZipCode">
+        <div class="input-field row">
+            <p id="description">Welcome to Dinnerview!<br>
+            This application will allow you to plan a movie and dinner event!<br>
+            Start by entering your zip code:</p>
+            <input id="zipcode" class="center" type="text" placeholder="Enter Zip Code">
             <br />
-            <input name="butAssignProd" class="btn btn-secondary center" id="selectMovies" type="submit" value="Select Movie">
+            <input name="butAssignProd" class="btn btn-submit center" id="selectMovies" type="submit" value="Select Movie">
         </div>
         <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
                 <div id="moviePoster"></div>
             </div>
-            <div class="col-lg-1"></div>
+            <div class="col-lg-2"></div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
