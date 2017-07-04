@@ -1,4 +1,16 @@
+    /* font-family: 'Share',
+    cursive;
+    font-family: 'Limelight',
+    cursive; */
+body {
+    font-family: 'Share',
+    cursive;
+    font-size: 22px;
+}
 .header {
+    font-family: 'Limelight',
+    cursive;
+    font-size: 40px;
     text-align: center;
     position: fixed;
     top: 0;
@@ -13,13 +25,20 @@
     color: #FFFFFF;
 }
 
+.top {
+    margin: 15px;
+}
+
 .input-field {
+    letter-spacing: 2px;
     margin-top: 175px;
 }
 
 .btn-submit {
+  margin-top: -10px;
   background-color: #757575;
   color: #FFFFFF;
+  font-size: 18px;
 }
 
 .center {
@@ -37,6 +56,10 @@
 a {
     color: hotpink;
     text-decoration: underline;
+}
+
+#selectMovies {
+  margin-top: 10px;
 }
 
 #description {

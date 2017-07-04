@@ -1,16 +1,27 @@
+    /* font-family: 'Share',
+    cursive;
+    font-family: 'Limelight',
+    cursive; */
+    
     body {
-    	background-color: #757575;
-    	color: #000000;
+        background-color: #757575;
+        color: #FFFFFF;
+        font-family: 'Share', cursive;
+        letter-spacing: 2px;
+        font-size: 22px;
     }
-
+    
     #map {
-    	border: solid 4px #000000;
+        border: solid 4px #FFFFFF;
         height: 500px;
         width: 95%;
     }
     
     .heading {
+        font-family: 'Limelight', cursive;
         text-align: center;
+        font-size: 50px;
+        letter-spacing: 2px;
     }
     
     .mapview {
@@ -19,18 +30,20 @@
     }
     
     .overview {
+        margin-top: 100px;
         padding-top: 50px;
-        padding-left: 50px;
+        padding-left: 20px;
     }
-	.navbar {
-		padding-bottom: 8px;
-		background-color: #FFFFFF;
-	}
-
-	.d-inline-block {
-		margin-right: 5px;
-	}
-
-	a {
-		color: #000000;
-	}
+    
+    .navbar {
+        padding-bottom: 8px;
+        background-color: #FFFFFF;
+    }
+    
+    .d-inline-block {
+        margin-right: 5px;
+    }
+    
+    a {
+        color: #000000;
+    }
