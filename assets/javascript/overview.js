@@ -58,17 +58,17 @@
         // API Key
         var key = "AIzaSyBlKlaUsiPTlUdhJDeX7hfw4TR6PHQKnSc";
         //WORKS WITH NAMES TOOOOOOO
-        databaseOne = "5835 N California Ave"; // test; will be dynamic based on data
+        databaseOne = "Ravenswood, IL"; // test; will be dynamic based on data
         // format address to replace spaces with + symbols
         var addressOne = databaseOne.split(' ').join('+');
         var markerOne = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressOne + "&key=" + key;
         //console.log(markerOne);
-        databaseTwo = "Loyola University Chicago"; // test; will be dynamic based on data
+        databaseTwo = "Lakeview, IL"; // test; will be dynamic based on data
         var addressTwo = databaseTwo.split(' ').join('+');
         var markerTwo = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressTwo + "&key=" + key;
         //console.log(markerTwo);
 
-        databaseThree = "Century 12 Evanston/CineArts 6 and XD"; // test; will be dynamic based on data
+        databaseThree = "West Loop, IL"; // test; will be dynamic based on data
         var addressThree = databaseThree.split(' ').join('+');
         //console.log(addressTest);
         var markerThree = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressThree + "&key=" + key;

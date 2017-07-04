@@ -4,16 +4,17 @@
 <head>
     <!-- mobile responsiveness! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1!!</title>
+    <title>DinnerView</title>
     <!-- Might want to add jQuery link if I decide to use it-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- linkt to style sheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/overview.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
     <!-- <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-database.js"></script>
@@ -22,33 +23,26 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1>Plan Overview</h1>
-        <h4><i>Here's what your outing will look like!</i></h4>
-    </div>
+    <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="index.html"><span><img src="./assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Home">| Home</span>
+        </a>
+    </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4">
-                <!-- This is to test the locations -->
-                <div id="test-coord">
-                    <!-- <input type="text" id="addy-one" placeholder="First Address Here">
-                    <br>
-                    <input type="text" id="addy-dos" placeholder="Second Address Here">
-                    <br>
-                    <input class="btn" id="submit-btn" type="submit"> -->
-                </div>
+            <div class="heading col-lg-12">
+                <h1>Plan Overview</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
-                <ul id="overview">
+            <div class="overview col-lg-4">
+                <ul id="overview-list">
                     <li>Movie Theatre: <span></span></li>
                     <li>Film: <span></span></li>
                     <li>Movie Time: <span></span></li>
                     <li>Restaurant: <span></span></li>
                 </ul>
             </div>
-            <div class="col-lg-8">
+            <div class="mapview col-lg-6">
                 <div id="map"></div>
             </div>
         </div>
