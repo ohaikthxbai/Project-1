@@ -26,6 +26,8 @@ function runQuery(numRestaurants, queryURL) {
                 console.log(foodData.restaurants[i].restaurant.user_rating);
                 console.log(foodData.restaurants[i].restaurant.url);
 
+
+                /*
                 //Render informaiton onto HTML page
                var wellSection = $('<div>');
                 wellSection.addClass("well");
@@ -40,6 +42,7 @@ function runQuery(numRestaurants, queryURL) {
                 &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.user_rating + "</h3>");
                 &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.url + "</h3>");
                 // Adding the photo section soon.
+                */
             }
 
             // Reference the URL within the Console
