@@ -16,31 +16,36 @@ function runQuery(numRestaurants, queryURL) {
 
     // Create AJAX Function
     $.ajax({ url: queryURL, mthod: "GET" })
-        .done(function(googleData) {
+        .done(function(foodData) {
 
             // Create loop that will log the name, address, price range, user rating, and url
             for (var i = 0; i < restaurantCounter; i++) {
-                console.log(googleData.restaurants[i].restaurant.name);
-                console.log(googleData.restaurants[i].restaurant.location.address);
-                console.log(googleData.restaurants[i].restaurant.price_range);
-                console.log(googleData.restaurants[i].restaurant.user_rating);
-                console.log(googleData.restaurants[i].restaurant.url);
+                console.log(foodData.restaurants[i].restaurant.name);
+                console.log(foodData.restaurants[i].restaurant.location.address);
+                console.log(foodData.restaurants[i].restaurant.price_range);
+                console.log(foodData.restaurants[i].restaurant.user_rating);
+                console.log(foodData.restaurants[i].restaurant.url);
 
                 //Render informaiton onto HTML page
-               /* var wellSection = $('<div>');
+               var wellSection = $('<div>');
                 wellSection.addClass("well");
                 wellSection.attr('id', 'restWell-' + i);
                 // Attach HTML and jQ wellSection
                 $('#wellSection').append(wellSection);
 
                 // Attach the content to the appropriate well
-                &("#restWell-" + i).append("<h3>" + googleData.restaurants[i].restaurant.name + "</h3>"); */
+                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.name + "</h3>");
+                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.location.address + "</h3>");
+                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.price_range + "</h3>");
+                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.user_rating + "</h3>");
+                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.url + "</h3>");
+                // Adding the photo section soon.
             }
 
             // Reference the URL within the Console
             console.log(queryURL);
             console.log(restaurantCounter);
-            console.log(googleData);
+            console.log(foodData);
 
         })
 
