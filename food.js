@@ -27,7 +27,6 @@ function runQuery(numRestaurants, queryURL) {
                 console.log(foodData.restaurants[i].restaurant.url);
 
 
-                /*
                 //Render informaiton onto HTML page
                var wellSection = $('<div>');
                 wellSection.addClass("well");
@@ -36,13 +35,14 @@ function runQuery(numRestaurants, queryURL) {
                 $('#wellSection').append(wellSection);
 
                 // Attach the content to the appropriate well
-                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.name + "</h3>");
-                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.location.address + "</h3>");
-                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.price_range + "</h3>");
-                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.user_rating + "</h3>");
-                &("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.url + "</h3>");
+                $("#restWell-" + i).append("<h3> Name: " +  foodData.restaurants[i].restaurant.name + "</h3>");
+                $("#restWell-" + i).append("<h3> Address: " + foodData.restaurants[i].restaurant.location.address + "</h3>");
+                $("#restWell-" + i).append("<h3> Price Range(1-5): " + foodData.restaurants[i].restaurant.price_range + "</h3>");
+                $("#restWell-" + i).append("<h3> Rating(1-5): " + foodData.restaurants[i].restaurant.user_rating.aggregate_rating + "</h3>");
+                $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.url + "</h3>");
+                $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.featured_image + "</h3>");
                 // Adding the photo section soon.
-                */
+                
             }
 
             // Reference the URL within the Console
@@ -50,7 +50,7 @@ function runQuery(numRestaurants, queryURL) {
             console.log(restaurantCounter);
             console.log(foodData);
 
-        })
+        });
 
 }
 
@@ -69,6 +69,6 @@ $('#searchBtn').on('click', function() {
     runQuery(0, "https://developers.zomato.com/api/v2.1/search?entity_id=292&entity_type=city&apikey=858f948cc66e31e989a5e17f72be49e3");
 
     return false;
-})
+});
 
 
