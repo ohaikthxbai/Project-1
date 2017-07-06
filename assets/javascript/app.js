@@ -104,7 +104,11 @@ $("#selectMovies").on("click", function(event) {
           for(var j = 0; j < data[i].showtimes.length; j++) {
             for(m = 0; m < theatre.length; m++) {
               if(data[i].showtimes[j].theatre.name === theatre[m]) {
+<<<<<<< HEAD
                 var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
+=======
+                var show = '<a href="'+data[i].showtimes[j].ticketURI+'">'+data[i].showtimes[j].dateTime+'</a>';
+>>>>>>> 678aa36e351878e69cf881e5785269b0ef2f4ed0
                 showTimes.push(show);
               }
             }
