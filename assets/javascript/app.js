@@ -35,6 +35,33 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //Set functionality for on click Select Movies button
+$(document).ready (function(event) {
+
+  //Assign the zipcode typed to a local variable
+  var zipCode = '60601';
+  var apikey = 'y2u5f77zh23pt34ukav7utg4';
+
+
+  $.ajax('https://data.tmsapi.com/v1.1/movies/showings?startDate=' + startDate + '&endDate=' + endDate + '&zip=' + zipCode + '&api_key=' + apikey)
+    .done(function(data) {
+
+
+        for (var i = 1; i < 8; i++) {
+
+          var imageURL = 'https://dlby.tmsimg.com/' + data[i].preferredImage.uri;
+
+          var title = '<h1>' + data[i].title + '</h1>'+'<h5>'+data[i].shortDescription+'</h5>';
+
+//Create the posters
+          $("#sampleMovies").append('<a><img src="' + imageURL + '"></a>');
+        }
+
+});
+
+});
+
+
+//Set functionality for on click Select Movies button
 $("#selectMovies").on("click", function(event) {
 
   //Assign the zipcode typed to a local variable
@@ -52,6 +79,7 @@ $("#selectMovies").on("click", function(event) {
         $('#selectMovies').hide();
         $('#zipcode').hide();
         $('#description').hide();
+        $('#sampleMovies').hide();
 
         for (var i = 1; i < data.length; i++) {
 
@@ -76,7 +104,7 @@ $("#selectMovies").on("click", function(event) {
           for(var j = 0; j < data[i].showtimes.length; j++) {
             for(m = 0; m < theatre.length; m++) {
               if(data[i].showtimes[j].theatre.name === theatre[m]) {
-                var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\'});">'+data[i].showtimes[j].dateTime+'</a>';
+                var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
                 showTimes.push(show);
               }
             }
