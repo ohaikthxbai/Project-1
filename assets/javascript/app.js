@@ -76,7 +76,7 @@ $("#selectMovies").on("click", function(event) {
           for(var j = 0; j < data[i].showtimes.length; j++) {
             for(m = 0; m < theatre.length; m++) {
               if(data[i].showtimes[j].theatre.name === theatre[m]) {
-                var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\'});">'+data[i].showtimes[j].dateTime+'</a>';
+                var show = '<a href="'+data[i].showtimes[j].ticketURI+'">'+data[i].showtimes[j].dateTime+'</a>';
                 showTimes.push(show);
               }
             }
