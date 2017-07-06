@@ -2,13 +2,25 @@
 //====================================================================
 // Global Variables
 var key = "858f948cc66e31e989a5e17f72be49e3";
+var firebase;
 // City ID for Chicago is 292
-var queryId = "292";
-var numberOf = "";
 // var for URL
 var queryURLBase = "https://developers.zomato.com/api/v2.1/search?entity_id=292&entity_type=city&apikey=" + key;
 // Restaurant Counter
-var restaurantCounter = 10;
+var restaurantCounter = 5;
+// Set firebase conneciton 
+//Set Firebase connection
+var config = {
+  apiKey: "858f948cc66e31e989a5e17f72be49e3",
+  authDomain: "food-date-7e9ed.firebaseapp.com",
+  databaseURL: "https://food-date-7e9ed.firebaseio.com",
+  projectId: "food-date-7e9ed",
+  storageBucket: "food-date-7e9ed.appspot.com",
+  messagingSenderId: "777352006484"
+};
+
+firebase.initializeApp(config);
+var database = firebase.database();
 
 //FUNCTIONS
 //====================================================================
@@ -26,30 +38,32 @@ function runQuery(numRestaurants, queryURL) {
                 console.log(foodData.restaurants[i].restaurant.user_rating);
                 console.log(foodData.restaurants[i].restaurant.url);
 
-
                 //Render informaiton onto HTML page
                 var wellSection = $('<div>');
                 wellSection.addClass("well");
                 wellSection.attr('id', 'restWell-' + i);
                 // Attach HTML and jQ wellSection
                 $('#wellSection').append(wellSection);
-
-                // Attach the content to the appropriate well
+                // Attach the name
                 $("#restWell-" + i).append("<h3> <a href='overview.html'> Name: " + foodData.restaurants[i].restaurant.name + " </a></h3>");
-                $("#restWell-" + i).append("<h3> Address: " + foodData.restaurants[i].restaurant.location.address + "</h3>");
+                // Attach the cuisines type
+                $("#restWell-" + i).append("<h3> Cuisines: " + foodData.restaurants[i].restaurant.cuisines + "</h3>");
+                // Attach the address
+                $("#restWell-" + i).append("<h3> Address: " + foodData.restaurants[i].restaurant.location.address + ", " + foodData.restaurants[i].restaurant.location.locality_verbose + ", IL " + foodData.restaurants[i].restaurant.location.zipcode + "</h3>");
+                // Attach the price range
                 $("#restWell-" + i).append("<h3> Price Range(1-5): " + foodData.restaurants[i].restaurant.price_range + "</h3>");
+                // Attach the rating
                 $("#restWell-" + i).append("<h3> Rating(1-5): " + foodData.restaurants[i].restaurant.user_rating.aggregate_rating + "</h3>");
+                // Attach the restaurant URL
                 $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.url + "</h3>");
-                $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.featured_image + "</h3>");
-                // Adding the photo section soon.
-
+                // Attach the main zomoato photo of restaurant
+                $("#restWell-" + i).append("<img src='" + foodData.restaurants[i].restaurant.featured_image + "'/>");
             }
 
             // Reference the URL within the Console
             console.log(queryURL);
             console.log(restaurantCounter);
             console.log(foodData);
-
         });
 
 }
