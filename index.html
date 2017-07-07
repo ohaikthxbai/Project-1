@@ -9,7 +9,11 @@
     <!-- mobile responsiveness! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Limelight|Share" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.1.0/jquery.carouFredSel.packed.js"></script>
+
     <link rel="stylesheet" href="./assets/css/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -34,7 +38,25 @@
 
             <input name="butAssignProd" class="btn btn-submit center" id="selectMovies" type="submit" value="Select Movie">
             <br />
-            <div id="sampleMovies" class="well container-fluid"></div>
+            <div id="wrapper">
+            <div id="inner">
+                <div id="carousel">
+                <div class="slide">
+                    <div class="small"><img src="https://i.ytimg.com/vi/YpULxTnj2n4/maxresdefault.jpg" alt="dot1" /></div>
+                    <div class="large"><img src="https://s-media-cache-ak0.pinimg.com/originals/a3/99/24/a39924a3fcb7266ff7360af8a6ba2e98.jpg" alt="dot2" width="95%" /></div>
+                </div>
+                <div class="slide">
+                    <div class="large"><img src="https://dlby.tmsimg.com/assets/p12798844_p_v5_ab.jpg" alt="cfs1" /></div>
+                    <div class="small"><img src="https://dlby.tmsimg.com/assets/p12608063_p_v5_aj.jpg" alt="cfs2" /></div>
+                </div>
+                <div class="slide">
+                    <div class="large"><img src="https://dlby.tmsimg.com/assets/p11006033_p_v5_ai.jpg" alt="val1" /></div>
+                    <div class="small"><img src="https://dlby.tmsimg.com/assets/p12343481_v_v5_ac.jpg" alt="val2" /></div>
+                </div>
+                </div>
+                <div id="pager"></div>
+            </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-2"></div>
@@ -45,7 +67,6 @@
         </div>
     </div>
     <script src="https://momentjs.com/downloads/moment.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="./assets/javascript/animatedModal.js"></script>
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
