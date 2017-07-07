@@ -24,24 +24,23 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="index.html"><span><img src="./assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Home">| Home</span>
-        </a>
-    </nav>
-    <div class="container-fluid">
+    <div class="header">
+        <h1 class="top"><a href="index.html"><img class="logo" id="logo" src="./assets/images/logoCrop.png" /></a>DinnerView</h1>
+    </div>
+    <div id="content" class="container-fluid">
         <div class="row">
             <div class="heading col-lg-12">
-                <h1>Plan Overview</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="overview col-lg-4">
+                <h1>Plan Summary</h1>
                 <ul id="overview-list">
-                    <li>Movie Theatre: <span></span></li>
-                    <li>Film: <span></span></li>
-                    <li>Movie Time: <span></span></li>
-                    <li>Restaurant: <span></span></li>
+                    <li>Movie Theatre: <span id="theatre"></span></li>
+                    <li>Film: <span id="movie-title"></span></li>
+                    <li>Movie Time: <span id="movie-time"></span></li>
+                    <li>Restaurant: <span id="restaurant"></span></li>
                 </ul>
             </div>
             <div class="mapview col-lg-6">

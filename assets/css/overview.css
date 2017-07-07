@@ -4,11 +4,37 @@
     cursive; */
     
     body {
-        background-color: #757575;
-        color: #FFFFFF;
         font-family: 'Share', cursive;
-        letter-spacing: 2px;
-        font-size: 22px;
+        font-size: 24px;
+    }
+    
+    .header {
+        font-family: 'Limelight', cursive;
+        font-size: 40px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 125px;
+        z-index: 10;
+        background: #757575;
+        -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        color: #FFFFFF;
+    }
+    
+    .top {
+        font-size: 80px;
+        margin: 15px;
+    }
+    
+    .logo {
+        margin-top: -5px;
+        width: 100px;
+        height: 100px;
+        align-content: center;
     }
     
     #map {
@@ -18,9 +44,8 @@
     }
     
     .heading {
-        font-family: 'Limelight', cursive;
         text-align: center;
-        font-size: 50px;
+        font-size: 22px;
         letter-spacing: 2px;
     }
     
@@ -30,14 +55,8 @@
     }
     
     .overview {
-        margin-top: 100px;
         padding-top: 50px;
         padding-left: 20px;
-    }
-    
-    .navbar {
-        padding-bottom: 8px;
-        background-color: #FFFFFF;
     }
     
     .d-inline-block {
@@ -46,4 +65,8 @@
     
     a {
         color: #000000;
+    }
+
+    #content {
+        margin-top: 125px;
     }
