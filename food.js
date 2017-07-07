@@ -44,17 +44,15 @@ function runQuery(numRestaurants, queryURL) {
                 // Attach HTML and jQ wellSection
                 $('#wellSection').append(wellSection);
                 // Attach the name
-                $("#restWell-" + i).append("<h3> <a href='overview.html'> Name: " + foodData.restaurants[i].restaurant.name + " </a></h3>");
+                $("#restWell-" + i).append("<h1> <a href='overview.html'>" + foodData.restaurants[i].restaurant.name + " </a></h1>");
                 // Attach the cuisines type
-                $("#restWell-" + i).append("<h3> Cuisines: " + foodData.restaurants[i].restaurant.cuisines + "</h3>");
+                $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.cuisines + "</h3>");
                 // Attach the address
-                $("#restWell-" + i).append("<h3> Address: " + foodData.restaurants[i].restaurant.location.address + ", " + foodData.restaurants[i].restaurant.location.locality_verbose + ", IL " + foodData.restaurants[i].restaurant.location.zipcode + "</h3>");
-                // Attach the price range
-                $("#restWell-" + i).append("<h3> Price Range(1-5): " + foodData.restaurants[i].restaurant.price_range + "</h3>");
+                $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.location.address + ", " + foodData.restaurants[i].restaurant.location.locality_verbose + ", IL " + "</h3>");
+                // Attach the cost 4 2
+               $("#restWell-" + i).append("<h3> Average Cost For Two: $" + foodData.restaurants[i].restaurant.average_cost_for_two + "</h3>");
                 // Attach the rating
                 $("#restWell-" + i).append("<h3> Rating(1-5): " + foodData.restaurants[i].restaurant.user_rating.aggregate_rating + "</h3>");
-                // Attach the restaurant URL
-                $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.url + "</h3>");
                 // Attach the main zomoato photo of restaurant
                 $("#restWell-" + i).append("<img src='" + foodData.restaurants[i].restaurant.featured_image + "'/>");
             }
