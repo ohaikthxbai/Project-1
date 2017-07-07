@@ -7,9 +7,8 @@ var firebase;
 // var for URL
 var queryURLBase = "https://developers.zomato.com/api/v2.1/search?entity_id=292&entity_type=city&apikey=" + key;
 // Restaurant Counter
-var restaurantCounter = 5;
+var restaurantCounter = 15;
 // Set firebase conneciton 
-//Set Firebase connection
 var config = {
   apiKey: "858f948cc66e31e989a5e17f72be49e3",
   authDomain: "food-date-7e9ed.firebaseapp.com",
