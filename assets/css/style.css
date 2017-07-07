@@ -190,3 +190,8 @@ input[type=text] {
 #pager a span {
 	display: none;
 }
+
+.row{
+  width: 1300px;
+  text-align: center;
+}
