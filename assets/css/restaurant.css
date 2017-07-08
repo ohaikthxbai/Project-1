@@ -29,8 +29,16 @@ body {
     margin: 15px;
 }
 
-.container {
-  margin-top: 175px;
+.input-field {
+    letter-spacing: 2px;
+    margin-top: 175px;
+}
+
+.btn-submit {
+  margin-top: -10px;
+  background-color: #757575;
+  color: #FFFFFF;
+  font-size: 18px;
 }
 
 .center {
@@ -50,11 +58,17 @@ a {
     text-decoration: underline;
 }
 
-img {
-  width: 100%;
+#selectMovies {
+  margin-top: 10px;
 }
 
+#description {
+    text-align: center;
+}
 
+#moviePoster {
+    text-align: center;
+}
 
 /*header.logo {
   width: 100%;
@@ -106,3 +120,82 @@ input[type=text] {
     transform: scale(1.3);
 }
 
+
+
+#wrapper {
+  /*border-bottom: 1px solid #757575;*/
+  background: #757575;
+  height: 50%;
+  width: 100%;
+  padding-top: 100px;
+  position: absolute;
+}
+#inner {
+  width: 650px;
+  height: 400px;
+  overflow: hidden;
+  margin-left: -325px;
+  position: absolute;
+  bottom: -75px;
+  left: 50%;
+}
+#carousel .slide {
+  width: 650px;
+  height: 400px;
+  float: left;
+  position: relative;
+}
+#carousel .slide > div {
+  height: 400px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+#carousel .slide > div.back {
+  height: 325px;
+}
+#carousel .slide > div.large {
+  left: 0;
+  z-index: 3;
+}
+#carousel .slide > div.large img {
+  margin-top: 50px;
+}
+#carousel .slide > div.small {
+  right: 0;
+  z-index: 2;
+}
+#carousel .slide > div.small img {
+  margin-top: 100px;
+}
+
+#pager {
+  position: absolute;
+  bottom: 12px;
+  right: 50px;
+  z-index: 6;
+}
+#pager a {
+  border-radius: 10px;
+  border: 1px solid #757575;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+}
+#pager a.selected {
+  border-width: 3px;
+  margin: 3px;
+}
+#pager a span {
+  display: none;
+}
+
+.foodRow{
+  text-align: center;
+}
+
+img{
+  width: 75%;
+  height: 75%;
+}
