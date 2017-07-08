@@ -81,6 +81,7 @@ $("#selectMovies").on("click", function(event) {
         $('#description').hide();
         $('#wrapper').hide();
         $('#carousel').hide();
+        $('#footer').hide();
 
         for (var i = 1; i < data.length; i++) {
 
