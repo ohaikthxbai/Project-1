@@ -70,7 +70,7 @@
         var markerTwo = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressTwo + "&key=" + key;
         //console.log(markerTwo);
 		//databaseThree = gotIt;
-        databaseThree = "West Loop, IL"; // test; will be dynamic based on data
+        databaseThree = "Lincoln Park, IL"; // test; will be dynamic based on data
         var addressThree = databaseThree.split(' ').join('+');
         //console.log(addressTest);
         var markerThree = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressThree + "&key=" + key;
