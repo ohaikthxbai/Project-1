@@ -2,61 +2,74 @@
     cursive;
     font-family: 'Limelight',
     cursive; */
-body {
-    font-family: 'Share',
-    cursive;
-    font-size: 24px;
-}
-.header {
-    font-family: 'Limelight',
-    cursive;
-    font-size: 40px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 125px;
-    z-index: 10;
-    background: #757575;
-    -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-    color: #FFFFFF;
-}
-
-.top {
-    margin: 15px;
-}
-
-.container {
-  margin-top: 175px;
-}
-
-.center {
-    display: block;
-    margin: auto;
-}
-
-.logo {
-    margin-top: -5px;
-    width: 100px;
-    height: 100px;
-    align-content: center;
-}
-
-a {
-    color: hotpink;
-    text-decoration: underline;
-}
-
-img {
-  width: 100%;
-}
-
-
-
-/*header.logo {
+    
+    body {
+        font-family: 'Share', cursive;
+        font-size: 24px;
+    }
+    
+    .header {
+        font-family: 'Limelight', cursive;
+        font-size: 40px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 125px;
+        z-index: 10;
+        background: #757575;
+        -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        color: #FFFFFF;
+    }
+    
+    .top {
+        margin: 15px;
+    }
+    
+    .input-field {
+        letter-spacing: 2px;
+        margin-top: 175px;
+    }
+    
+    .btn-submit {
+        margin-top: -10px;
+        background-color: #757575;
+        color: #FFFFFF;
+        font-size: 18px;
+    }
+    
+    .center {
+        display: block;
+        margin: auto;
+    }
+    
+    .logo {
+        margin-top: -5px;
+        width: 100px;
+        height: 100px;
+        align-content: center;
+    }
+    
+    a {
+        color: hotpink;
+        text-decoration: underline;
+    }
+    
+    #selectMovies {
+        margin-top: 10px;
+    }
+    
+    #description {
+        text-align: center;
+    }
+    
+    #moviePoster {
+        text-align: center;
+    }
+    /*header.logo {
   width: 100%;
   height: 60px;
   background: #FFF;
@@ -87,22 +100,110 @@ input[type=text] {
     border-bottom: 1.5px solid #000000;
     text-align: center;
 }*/
-
-.btn-close-modal {
-    cursor: pointer;
-    color: #fff;
-}
-
-.closebt {
-    padding: 10px;
-    display: block;
-    margin: auto;
-    animation-play-state: paused;
-}
-
-.closebt:hover {
-    -moz-transform: scale(1.3);
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-}
-
+    
+    .btn-close-modal {
+        cursor: pointer;
+        color: #fff;
+    }
+    
+    .closebt {
+        padding: 10px;
+        display: block;
+        margin: auto;
+        animation-play-state: paused;
+    }
+    
+    .closebt:hover {
+        -moz-transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    
+    #wrapper {
+        /*border-bottom: 1px solid #757575;*/
+        background: #757575;
+        height: 50%;
+        width: 100%;
+        padding-top: 100px;
+        position: absolute;
+    }
+    
+    #inner {
+        width: 650px;
+        height: 400px;
+        overflow: hidden;
+        margin-left: -325px;
+        position: absolute;
+        bottom: -75px;
+        left: 50%;
+    }
+    
+    #carousel .slide {
+        width: 650px;
+        height: 400px;
+        float: left;
+        position: relative;
+    }
+    
+    #carousel .slide > div {
+        height: 400px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+    
+    #carousel .slide > div.back {
+        height: 325px;
+    }
+    
+    #carousel .slide > div.large {
+        left: 0;
+        z-index: 3;
+    }
+    
+    #carousel .slide > div.large img {
+        margin-top: 50px;
+    }
+    
+    #carousel .slide > div.small {
+        right: 0;
+        z-index: 2;
+    }
+    
+    #carousel .slide > div.small img {
+        margin-top: 100px;
+    }
+    
+    #pager {
+        position: absolute;
+        bottom: 12px;
+        right: 50px;
+        z-index: 6;
+    }
+    
+    #pager a {
+        border-radius: 10px;
+        border: 1px solid #757575;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 5px;
+    }
+    
+    #pager a.selected {
+        border-width: 3px;
+        margin: 3px;
+    }
+    
+    #pager a span {
+        display: none;
+    }
+    
+    .foodRow {
+        text-align: center;
+    }
+    
+    img {
+        width: 75%;
+        height: 65%;
+    }
