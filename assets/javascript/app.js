@@ -105,14 +105,14 @@ $("#selectMovies").on("click", function(event) {
           for(var j = 0; j < data[i].showtimes.length; j++) {
             for(m = 0; m < theatre.length; m++) {
               if(data[i].showtimes[j].theatre.name === theatre[m]) {
-                var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
+                var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\',time:\''+data[i].showtimes[j].dateTime+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
                 showTimes.push(show);
               }
             }
           }
 
           var theatreTimes = $.map(theatre, function(v, i) { return [v, showTimes[i]]; });
-
+			//var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({movie:\''+data[i].title+'\',theatre:\''+data[i].showtimes[j].theatre.name+'\',time:\''+data[i].showtimes[j].dateTime+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
           $("#moviePoster").append('<div id="modal-0' + i + '"><div id="btn-close-modal-' + i + '" class="close-modal-0' + i + '"><img class="closebt" src="./assets/images/closebt.svg" /></div><div class="modal-content"></div>'+'<div class="h1 container"'+title+'<div class="h5 well">'+theatreTimes.join("<br>") + '</div></div></div>');
 
           // for (var j = 0; j < data[i].showtimes.length; j++) {

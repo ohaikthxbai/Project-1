@@ -84,7 +84,8 @@ database.ref().limitToLast(1).on("child_added", function(snapshot) {
                         // Attach HTML and jQ wellSection
                         $('#wellSection').append(wellSection);
                         // Attach the name
-                        $("#restWell-" + i).append("<h1> <a href='overview.html'>" + foodData.restaurants[i].restaurant.name + " </a></h1>");
+                        //$("#restWell-" + i).append("<h1> <a href='overview.html'>" + foodData.restaurants[i].restaurant.name + " </a></h1>");
+                        $("#restWell-" + i).append("<h1> <a href='overview.html' onclick='javascript:database.ref().push({restaurant:\""+foodData.restaurants[i].restaurant.name+"\"});' >" + foodData.restaurants[i].restaurant.name + " </a></h1>");
                         // Attach the cuisines type
                         $("#restWell-" + i).append("<h3>" + foodData.restaurants[i].restaurant.cuisines + "</h3>");
                         // Attach the address
