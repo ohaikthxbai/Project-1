@@ -1,3 +1,6 @@
+    var nameArray = [];
+    var str;
+
     var firebase;
     //Set Firebase connection
     var config = {
@@ -8,17 +11,23 @@
         storageBucket: "food-date-7e9ed.appspot.com",
         messagingSenderId: "777352006484"
     };
-
+    firebase.initializeApp(config);
     var database = firebase.database();
-
-    console.log(database);
-
-    database.ref().on("child_added", function(snapshot) {
+    //console.log(database);
+    var recentPostsRef = database.ref().limitToLast(2);
+     
+    //console.log(recentPostsRef);
+    database.ref().limitToLast(2).on("child_added", function(snapshot) {
         var snapValue = snapshot.val();
-
-        console.log(snapValue);
-
+        //console.log(snapValue);
+        str = JSON.stringify(snapValue["thetre"]);
+        console.log(str);
+        //.log(typeof str);
+        //nameArray.push(snapValue);
+       
     });
+    //console.log(nameArray);
+
 
     // Global Variables
     var databaseOne; // movie theatre address/name
@@ -62,7 +71,7 @@
         // format address to replace spaces with + symbols
         var addressOne = databaseOne.split(' ').join('+');
         var markerOne = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressOne + "&key=" + key;
-        //console.log(markerOne);
+        console.log(markerOne);
         databaseTwo = "Lakeview, IL"; // test; will be dynamic based on data
         var addressTwo = databaseTwo.split(' ').join('+');
         var markerTwo = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressTwo + "&key=" + key;
@@ -106,9 +115,9 @@
                 movieLoc = new google.maps.LatLng(movieLat, movieLng);
 
                 $.ajax({
-                url: markerThree,
-                method: 'GET'
-                }).done(function(response) {                
+                    url: markerThree,
+                    method: 'GET'
+                }).done(function(response) {
                     // MARKER C
                     // latitude
                     restLat = response.results[0].geometry.location.lat;
@@ -135,7 +144,7 @@
                     // defining the start and end points
                     var waypts = [];
                     waypts = [{
-                        location: movieLoc, 
+                        location: movieLoc,
                         stopover: true
                     }];
                     var start = startLoc;
