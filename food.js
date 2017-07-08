@@ -19,7 +19,7 @@ var queryURLBase = "https://developers.zomato.com/api/v2.1/search?lat=" + tLat +
 var restaurantCounter = 15;
 // Set firebase conneciton 
 var config = {
-    apiKey: "858f948cc66e31e989a5e17f72be49e3",
+    apiKey: "AIzaSyAwU4ovw7pk-yAktrPJXl7CV18eFPgiMTI",
     authDomain: "food-date-7e9ed.firebaseapp.com",
     databaseURL: "https://food-date-7e9ed.firebaseio.com",
     projectId: "food-date-7e9ed",
