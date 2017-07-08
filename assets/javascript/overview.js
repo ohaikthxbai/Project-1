@@ -14,6 +14,7 @@
     var databaseThree; // starting address/name
     var str;
     var str2;
+    var gotIt;
 
     var firebase;
     //Set Firebase connection
@@ -28,19 +29,30 @@
     firebase.initializeApp(config);
     var database = firebase.database();
     //console.log(database);
-    var recentPostsRef = database.ref().limitToLast(2);
+    var recentPostsRef = database.ref().limitToLast(1);
      
     //console.log(recentPostsRef);
     database.ref().limitToLast(2).on("child_added", function(snapshot) {
+       
+        var objArray = [];
         var snapValue = snapshot.val();
-        console.log(snapValue);
+        var newObject = database.ref().limitToLast(2-1).on("child_added", function(snapshot) {
+        	var newSnapValue = snapshot.val();
+        	//console.log(newSnapValue);
+        	gotIt = JSON.stringify(snapValue["restaurant"]).replace(/"/g, "");
+        	$('#restaurant').append(gotIt);
+        	});
+        //console.log(snapValue);
+        //console.log(snapValue);
+    	var all = JSON.stringify(snapValue).replace(/"/g, "");
+    	console.log(all);
         str = JSON.stringify(snapValue["theatre"]).replace(/"/g, "");
         str2 = JSON.stringify(snapValue["time"]).replace(/"/g, "");
         str3 = JSON.stringify(snapValue["movie"]).replace(/"/g, "");
         //str3 = JSON.stringify(snapValue["restaurant"]).replace(/"/g, "");
-        console.log(str);
-        console.log(str2);
-        console.log(str3);
+        //console.log(str);
+        //console.log(str2);
+        //console.log(str3);
         //.log(typeof str);
         
             // display the map, its points, and route
@@ -57,7 +69,7 @@
         var addressTwo = databaseTwo.split(' ').join('+');
         var markerTwo = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addressTwo + "&key=" + key;
         //console.log(markerTwo);
-
+		//databaseThree = gotIt;
         databaseThree = "West Loop, IL"; // test; will be dynamic based on data
         var addressThree = databaseThree.split(' ').join('+');
         //console.log(addressTest);
