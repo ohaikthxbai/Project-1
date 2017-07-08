@@ -68,9 +68,9 @@ $("#selectMovies").on("click", function(event) {
   var zipCode = $("#zipcode").val().trim();
   var apikey = 'y2u5f77zh23pt34ukav7utg4';
 
-  database.ref().push({
-    zipcode: zipCode
-  });
+  // database.ref().push({
+  //   zipcode: zipCode
+  // });
 
   $.ajax('https://data.tmsapi.com/v1.1/movies/showings?startDate=' + startDate + '&endDate=' + endDate + '&zip=' + zipCode + '&api_key=' + apikey)
     .done(function(data) {
