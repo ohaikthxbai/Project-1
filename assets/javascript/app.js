@@ -105,7 +105,8 @@ $("#selectMovies").on("click", function(event) {
           for(var j = 0; j < data[i].showtimes.length; j++) {
             for(m = 0; m < theatre.length; m++) {
               if(data[i].showtimes[j].theatre.name === theatre[m]) {
-                var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\',time:\''+data[i].showtimes[j].dateTime+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
+                var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({movie:\''+data[i].title+'\',theatre:\''+data[i].showtimes[j].theatre.name+'\',time:\''+data[i].showtimes[j].dateTime+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
+                //var show = '<a href="restaurant.html" onclick="javascript:database.ref().push({thetre:\''+data[i].showtimes[j].theatre.name+'\',time:\''+data[i].showtimes[j].dateTime+'\'});">'+moment(data[i].showtimes[j].dateTime).format('LT')+'</a>';
                 showTimes.push(show);
               }
             }

@@ -34,13 +34,13 @@
     database.ref().limitToLast(2).on("child_added", function(snapshot) {
         var snapValue = snapshot.val();
         console.log(snapValue);
-        str = JSON.stringify(snapValue["thetre"]).replace(/"/g, "");
+        str = JSON.stringify(snapValue["theatre"]).replace(/"/g, "");
         str2 = JSON.stringify(snapValue["time"]).replace(/"/g, "");
-        //str3 = JSON.stringify(snapValue["title"]).replace(/"/g, "");
+        str3 = JSON.stringify(snapValue["movie"]).replace(/"/g, "");
         //str3 = JSON.stringify(snapValue["restaurant"]).replace(/"/g, "");
         console.log(str);
         console.log(str2);
-        //console.log(str3);
+        console.log(str3);
         //.log(typeof str);
         
             // display the map, its points, and route
@@ -66,7 +66,7 @@
         
         $('#theatre').append(str);
         $('#movie-time').append(str2);
-        //$('#movie-title').append(str3);
+        $('#movie-title').append(str3);
 
         // grabbing the data from the API       
         $.ajax({

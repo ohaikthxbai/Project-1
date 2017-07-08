@@ -38,7 +38,7 @@ var recentPostsRef = database.ref().limitToLast(1);
 database.ref().limitToLast(1).on("child_added", function(snapshot) {
     snapValue = snapshot.val();
     //console.log(snapValue);
-    str = JSON.stringify(snapValue["thetre"]).replace(/"/g, "");
+    str = JSON.stringify(snapValue["theatre"]).replace(/"/g, "");
     //console.log("This " + str);
 
     //Google Maps API reference:
